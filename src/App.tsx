@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
       font-family: inherit;
     }
   }
-
+  
   body {
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
       flex-direction: column;
       flex-grow: 1;
 
-      // The content of the page, i.e. the StyledApp component below
+      /* The content of the page, i.e. the StyledApp component below */
       > * {
         flex-grow: 1;
       }
