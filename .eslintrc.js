@@ -13,7 +13,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
-    "prettier/react"
+    'prettier/react'
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -21,7 +21,13 @@ module.exports = {
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': [
+      'error',
+      {
+        html: 'ignore'
+      }
+    ]
   },
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],

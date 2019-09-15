@@ -1,3 +1,5 @@
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'theme/default';
@@ -65,11 +67,9 @@ const App: React.FC = () => {
       <>
         <GlobalStyle />
         <StyledApp>
-          <header>
-            <h1>Mika leffa</h1>
-          </header>
-          <main>MAIN</main>
-          <footer>Made with &#10084;&#65039; by salokristian</footer>
+          <Header />
+          <main>MAIN CONTENT</main>
+          <Footer />
         </StyledApp>
       </>
     </ThemeProvider>
