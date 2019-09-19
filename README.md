@@ -2,4 +2,11 @@
 
 ## The idea
 
-`currently screening movies + matching reviews = no pain in choosing a movie`
+`currently screening movies + matching reviews = less pain in choosing a movie`
+
+## Running
+
+```bash
+npm install
+npm start
+```
