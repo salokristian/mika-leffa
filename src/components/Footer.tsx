@@ -34,13 +34,13 @@ const FlaticonCredit: React.FC<FlaticonCreditProps> = ({ authorName, Icon }) => 
   );
 };
 
-const StyledCreditList = styled.div`
+const StyledFlaticonCreditList = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 0.75rem;
 
-  button {
+  ${BorderButton} {
     margin: 0 auto;
     font-size: inherit;
   }
@@ -51,7 +51,7 @@ const StyledCreditList = styled.div`
     flex-direction: column;
   }
 
-  > .list > .credit {
+  > .list > ${StyledCredit} {
     margin: 1rem 0;
   }
 `;
@@ -60,7 +60,7 @@ const FlaticonCreditList: React.FC = () => {
   const [isClosed, setIsClosed] = useState(true);
 
   return (
-    <StyledCreditList className="creditlist">
+    <StyledFlaticonCreditList className="creditlist">
       <BorderButton type="button" onClick={(): void => setIsClosed(!isClosed)}>
         {isClosed ? 'Show icon credits' : 'Hide icon credits'}
       </BorderButton>
@@ -69,7 +69,7 @@ const FlaticonCreditList: React.FC = () => {
           <FlaticonCredit authorName="Pixel perfect" Icon={ClapperBoard} />
         </div>
       )}
-    </StyledCreditList>
+    </StyledFlaticonCreditList>
   );
 };
 
