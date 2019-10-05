@@ -17,15 +17,17 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 'off',
-    'react/jsx-props-no-spreading': [
+    'react/jsx-props-no-spreading': ['error', { html: 'ignore' }],
+    '@typescript-eslint/explicit-function-return-type': [
       'error',
       {
-        html: 'ignore'
+        allowExpressions: true
       }
     ]
   },
