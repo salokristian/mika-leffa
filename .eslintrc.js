@@ -21,6 +21,8 @@ module.exports = {
     project: './tsconfig.json'
   },
   rules: {
+    'import/prefer-default-export': 'off',
+    radix: ['error', 'as-needed'],
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': ['error', { html: 'ignore' }],
