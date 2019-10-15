@@ -1,4 +1,4 @@
-import { isDefined } from 'components/common/ts-utils';
+import { isDefined } from 'common/ts-utils';
 import { TheatreArea } from './types';
 
 const parseTheatreAreaXml = (theatreAreaXml: Element): TheatreArea => {
