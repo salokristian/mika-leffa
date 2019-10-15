@@ -4,10 +4,13 @@
 
 module.exports = {
   env: {
-    browser: true
+    browser: true,
+    'jest/globals': true
   },
   parser: '@typescript-eslint/parser',
   extends: [
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',

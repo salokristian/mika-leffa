@@ -19,8 +19,15 @@
   "scripts": {
     "start": "concurrently \"overmind-devtools\" \"react-scripts start\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --verbose",
+    "watch": "jest --verbose --watchall",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "modulePaths": [
+      "<rootDir>/src/"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +53,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
@@ -56,6 +64,7 @@
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-prettier": "^1.1.1"
+    "stylelint-prettier": "^1.1.1",
+    "ts-jest": "^24.1.0"
   }
 }
