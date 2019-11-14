@@ -1,9 +1,5 @@
-type State = {
-  test: string;
-};
+type State = {};
 
-const state: State = {
-  test: 'My App'
-};
+const state: State = {};
 
 export default state;
