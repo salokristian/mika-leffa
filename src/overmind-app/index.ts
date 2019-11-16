@@ -19,4 +19,4 @@ declare module 'overmind' {
   interface Config extends IConfig<typeof config> {}
 }
 
-export default { useOvermind, config };
+export { useOvermind, config };
