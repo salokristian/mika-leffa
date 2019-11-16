@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font: 1rem 'Roboto', sans-serif;
     font-size: 100%;
     color: ${(props) => props.theme.colors.white};
-    background-color: ${(props) => props.theme.colors.secondaryDark};
+    background-color: ${(props) => props.theme.colors.secondaryDarker};
 
     h1,
     h2,
