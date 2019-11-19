@@ -19,7 +19,6 @@ const TitleWrapper = styled.div`
 `;
 
 const StyledH1 = styled.h1`
-  display: block;
   margin: 0;
   line-height: 0.9;
   font-size: 4rem;
@@ -32,8 +31,10 @@ const Header: React.FC = () => {
     <StyledHeader>
       <ClapperBoard />
       <TitleWrapper>
-        <StyledH1>Mikä</StyledH1>
-        <StyledH1>Leffa</StyledH1>
+        <StyledH1>
+          <div>Mikä</div>
+          <div>leffa</div>
+        </StyledH1>
       </TitleWrapper>
     </StyledHeader>
   );
