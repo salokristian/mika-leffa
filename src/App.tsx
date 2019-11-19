@@ -1,7 +1,8 @@
-import Footer from 'components/Footer';
-import Header from 'components/Header';
 import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import TheatreAreaSearch from 'finnkino/theatreAreaSearch';
 import theme from 'theme/default';
 
 const GlobalStyle = createGlobalStyle`
@@ -26,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     select,
     textarea,
     button {
+      color: inherit;
       font-family: inherit;
     }
   }
@@ -64,14 +66,12 @@ const StyledApp = styled.div`
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle />
-        <StyledApp>
-          <Header />
-          <main>MAIN CONTENT</main>
-          <Footer />
-        </StyledApp>
-      </>
+      <GlobalStyle />
+      <StyledApp>
+        <Header />
+        <TheatreAreaSearch />
+        <Footer />
+      </StyledApp>
     </ThemeProvider>
   );
 };
