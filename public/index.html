@@ -40,5 +40,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- Keep the bundle nice and small by loading things that are not needed on first paint from a CDN -->
+
+    <!-- Focus-visible and required polyfills -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList"></script>
+    <script src="https://unpkg.com/focus-visible"></script>
   </body>
 </html>

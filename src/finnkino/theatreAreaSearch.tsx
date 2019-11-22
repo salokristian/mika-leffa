@@ -8,14 +8,8 @@ import {
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { baseInput } from 'components/Input';
+import SectionTitle from 'components/SectionTitle';
 import { useOvermind } from 'overmind-app';
-
-const StyledLabel = styled.h2`
-  font-size: 1.3rem;
-  font-weight: 300;
-  padding: 0.5em;
-  margin: 0;
-`;
 
 const StyledComboboxInput = styled(ComboboxInput)`
   ${baseInput}
@@ -53,7 +47,7 @@ const TheatreAreaSearch: React.FC = () => {
 
     return (
       <>
-        <StyledLabel id="areaSearchLabel">Hae elokuvateatteria</StyledLabel>
+        <SectionTitle id="areaSearchLabel">Hae elokuvateatteria</SectionTitle>
         <Combobox>
           <StyledComboboxInput
             onChange={(e) => setTerm((e.target as HTMLInputElement).value)}

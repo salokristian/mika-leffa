@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import ShowDatePicker from 'finnkino/ShowDatePicker';
 import TheatreAreaSearch from 'finnkino/theatreAreaSearch';
 import theme from 'theme/default';
 
@@ -29,6 +30,21 @@ const GlobalStyle = createGlobalStyle`
     button {
       color: inherit;
       font-family: inherit;
+      font-size: inherit;
+    }
+
+    /*  
+    This will hide the focus indicator if the element receives focus via the mouse,
+    but it will still show up on keyboard focus.
+
+    If it is desirable to show a focus indicator other than the default browser indicator, 
+    it should be done case-by-case with the following selector:
+      
+      .focus-visible
+    
+    */
+    &.js-focus-visible :focus:not(.focus-visible) {
+      outline: none;
     }
   }
   
