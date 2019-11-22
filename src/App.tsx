@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import ShowDatePicker from 'finnkino/ShowDatePicker';
-import TheatreAreaSearch from 'finnkino/theatreAreaSearch';
+import TheatreAreaSearch from 'finnkino/TheatreAreaSearch';
 import theme from 'theme/default';
 
 const Main = styled.main`
