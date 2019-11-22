@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { baseInput } from 'components/Input';
 import SectionTitle from 'components/SectionTitle';
+import Section from 'components/Section';
 import { useOvermind } from 'overmind-app';
 
 const StyledComboboxInput = styled(ComboboxInput)`
@@ -46,7 +47,7 @@ const TheatreAreaSearch: React.FC = () => {
       .slice(0, 5);
 
     return (
-      <>
+      <Section>
         <SectionTitle id="areaSearchLabel">Hae elokuvateatteria</SectionTitle>
         <Combobox>
           <StyledComboboxInput
@@ -61,10 +62,14 @@ const TheatreAreaSearch: React.FC = () => {
             </StyledComboboxList>
           </ComboboxPopover>
         </Combobox>
-      </>
+      </Section>
     );
   } else {
-    return <span>Meillä on ongelma</span>;
+    return (
+      <Section>
+        <span>Meillä on ongelma</span>
+      </Section>
+    );
   }
 };
 

@@ -6,6 +6,23 @@ import ShowDatePicker from 'finnkino/ShowDatePicker';
 import TheatreAreaSearch from 'finnkino/theatreAreaSearch';
 import theme from 'theme/default';
 
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+
+  > ${Main} {
+    flex-grow: 1;
+  }
+`;
+
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -60,22 +77,11 @@ const GlobalStyle = createGlobalStyle`
       flex-direction: column;
       flex-grow: 1;
 
-      /* The content of the page, i.e. the StyledApp component below */
-      > * {
+      /* The content of the page should span at least the whole page */
+    > ${StyledApp} {
         flex-grow: 1;
       }
     }
-  }
-`;
-
-const StyledApp = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-
-  > main {
-    flex-grow: 1;
   }
 `;
 
@@ -85,7 +91,10 @@ const App: React.FC = () => {
       <GlobalStyle />
       <StyledApp>
         <Header />
-        <TheatreAreaSearch />
+        <Main>
+          <TheatreAreaSearch />
+          <ShowDatePicker />
+        </Main>
         <Footer />
       </StyledApp>
     </ThemeProvider>

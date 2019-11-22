@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from 'components/SectionTitle';
+import Section from 'components/Section';
 import { useOvermind } from 'overmind-app';
 
 const StyledShowDatePicker = styled.div`
@@ -51,7 +52,7 @@ const ShowDatePicker: React.FC = () => {
   const showDates = getAvailableShowDates();
 
   return (
-    <>
+    <Section>
       <SectionTitle id="ShowDatePickerLabel">Valitse näytöspäivä</SectionTitle>
       <StyledShowDatePicker>
         {showDates.map((showDate, idx, arr) => (
@@ -72,7 +73,7 @@ const ShowDatePicker: React.FC = () => {
           </>
         ))}
       </StyledShowDatePicker>
-    </>
+    </Section>
   );
 };
 
