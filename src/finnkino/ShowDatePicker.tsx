@@ -4,8 +4,13 @@ import SectionTitle from 'components/SectionTitle';
 import Section from 'components/Section';
 import { useOvermind } from 'overmind-app';
 
+const firstLineItems = 3;
+
 const StyledShowDatePicker = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 `;
 
 const ShowDate = styled.button`
@@ -35,6 +40,11 @@ const Divider = styled.div`
   background-color: ${(props) => props.theme.colors.secondaryLight};
 `;
 
+const Break = styled.div`
+  height: 1rem;
+  flex-basis: 100%;
+`;
+
 // Just get the next 7 days even though they are not always all available
 // See: https://www.finnkino.fi/faq -> "Milloin elokuvien näytösajat julkaistaan?"
 const getAvailableShowDates = (): Date[] => {
@@ -53,7 +63,7 @@ const ShowDatePicker: React.FC = () => {
 
   return (
     <Section>
-      <SectionTitle id="ShowDatePickerLabel">Valitse näytöspäivä</SectionTitle>
+      <SectionTitle id="ShowDatePickerLabel">Valitse näytöspäivät</SectionTitle>
       <StyledShowDatePicker>
         {showDates.map((showDate, idx, arr) => (
           <>
@@ -69,7 +79,8 @@ const ShowDatePicker: React.FC = () => {
                 month: 'numeric'
               })}
             </ShowDate>
-            {idx !== arr.length - 1 && <Divider />}
+            {idx !== arr.length - 1 && idx !== firstLineItems - 1 && <Divider />}
+            {idx === firstLineItems - 1 && <Break />}
           </>
         ))}
       </StyledShowDatePicker>
