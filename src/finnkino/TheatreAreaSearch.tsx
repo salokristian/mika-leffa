@@ -38,18 +38,18 @@ const StyledComboboxOption = styled(ComboboxOption)`
 `;
 
 const TheatreAreaSearch: React.FC = () => {
-  const { state } = useOvermind();
+  const { state, actions } = useOvermind();
   const [term, setTerm] = useState('');
 
   if (state.finnkino.theatreAreas !== null) {
-    const matches = state.finnkino.theatreAreas
+    const matches = Object.values(state.finnkino.theatreAreas)
       .filter((theatreArea) => theatreArea.name.match(RegExp(term, 'i')))
       .slice(0, 5);
 
     return (
       <Section>
         <SectionTitle id="areaSearchLabel">Hae elokuvateatteria</SectionTitle>
-        <Combobox>
+        <Combobox onSelect={actions.finnkino.toggleTheatreArea}>
           <StyledComboboxInput
             onChange={(e) => setTerm((e.target as HTMLInputElement).value)}
             aria-labelledby="areaSearchLabel"

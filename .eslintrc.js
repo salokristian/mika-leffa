@@ -25,8 +25,9 @@ module.exports = {
   },
   rules: {
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
     'no-else-return': 'off',
-    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
+    'no-param-reassign': 'off',
     radix: ['error', 'as-needed'],
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 'off',
