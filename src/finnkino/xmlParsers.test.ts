@@ -1,22 +1,22 @@
-import { TheatreArea } from './types';
+import { TheatreAreas } from './types';
 import { parseTheatreAreasXml } from './xmlParsers';
 
 describe('parseTheareAreasXml', () => {
   it('returns correct theatre areas', () => {
-    const theatreAreas: TheatreArea[] = [
-      {
+    const theatreAreas: TheatreAreas = {
+      0: {
         name: 'Helsinki',
         id: 0
       },
-      {
+      2: {
         name: 'Turku',
         id: 2
       },
-      {
+      3: {
         name: 'Pori',
         id: 3
       }
-    ];
+    };
 
     const theatreAreasXmlString = `
       <TheatreAreas xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

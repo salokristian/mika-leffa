@@ -1,5 +1,5 @@
 import { isDefined } from 'common/ts-utils';
-import { TheatreArea } from './types';
+import { TheatreArea, TheatreAreas } from './types';
 
 const parseTheatreAreaXml = (theatreAreaXml: Element): TheatreArea => {
   const idNode = theatreAreaXml.children[0];
@@ -12,8 +12,13 @@ const parseTheatreAreaXml = (theatreAreaXml: Element): TheatreArea => {
   throw new Error(`Invalid theatre area XML: ${theatreAreaXml.textContent}`);
 };
 
-const parseTheatreAreasXml = (theatreAreasXml: HTMLElement): TheatreArea[] => {
-  return Array.from(theatreAreasXml.children).map(parseTheatreAreaXml);
+const parseTheatreAreasXml = (theatreAreasXml: HTMLElement): TheatreAreas => {
+  return Array.from(theatreAreasXml.children)
+    .map(parseTheatreAreaXml)
+    .reduce((theatreAreas: TheatreAreas, theatreArea) => {
+      theatreAreas[theatreArea.id] = theatreArea;
+      return theatreAreas;
+    }, {});
 };
 
 export { parseTheatreAreasXml };

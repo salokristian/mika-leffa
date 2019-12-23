@@ -1,8 +1,8 @@
 import myFetch from 'common/myFetch';
-import { TheatreArea } from './types';
+import { TheatreAreas } from './types';
 import { parseTheatreAreasXml } from './xmlParsers';
 
-export const getTheatreCities = async (): Promise<TheatreArea[]> => {
+export const getTheatreCities = async (): Promise<TheatreAreas> => {
   const fetched = await myFetch('https://www.finnkino.fi/xml/TheatreAreas/');
 
   if (fetched.ok) {
