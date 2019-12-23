@@ -66,7 +66,7 @@ const ShowDatePicker: React.FC = () => {
       <SectionTitle id="ShowDatePickerLabel">Valitse näytöspäivät</SectionTitle>
       <StyledShowDatePicker>
         {showDates.map((showDate, idx, arr) => (
-          <>
+          <React.Fragment key={showDate.toDateString()}>
             <ShowDate
               className={isShowDateSelected(showDate) ? 'selected' : undefined}
               aria-selected={isShowDateSelected(showDate)}
@@ -81,7 +81,7 @@ const ShowDatePicker: React.FC = () => {
             </ShowDate>
             {idx !== arr.length - 1 && idx !== firstLineItems - 1 && <Divider />}
             {idx === firstLineItems - 1 && <Break />}
-          </>
+          </React.Fragment>
         ))}
       </StyledShowDatePicker>
     </Section>
