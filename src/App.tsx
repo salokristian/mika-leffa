@@ -1,9 +1,12 @@
 import React from 'react';
+import { createOvermind } from 'overmind';
+import { Provider } from 'overmind-react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import ShowDatePicker from 'finnkino/ShowDatePicker';
 import TheatreAreaSearch from 'finnkino/TheatreAreaSearch';
+import { config } from 'overmind-app';
 import theme from 'theme/default';
 
 const Main = styled.main`
@@ -85,19 +88,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const overmind = createOvermind(config, { devtools: true });
+
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <StyledApp>
-        <Header />
-        <Main>
-          <TheatreAreaSearch />
-          <ShowDatePicker />
-        </Main>
-        <Footer />
-      </StyledApp>
-    </ThemeProvider>
+    <Provider value={overmind}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <StyledApp>
+          <Header />
+          <Main>
+            <TheatreAreaSearch />
+            <ShowDatePicker />
+          </Main>
+          <Footer />
+        </StyledApp>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
