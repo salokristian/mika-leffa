@@ -5,6 +5,7 @@ import {
   ComboboxOption,
   ComboboxPopover
 } from '@reach/combobox';
+import '@reach/combobox/styles.css';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { baseInput } from 'components/Input';
@@ -17,23 +18,34 @@ const StyledComboboxInput = styled(ComboboxInput)`
   width: 300px;
 `;
 
+const StyledComboboxPopover = styled(ComboboxPopover)`
+  &[data-reach-combobox-popover] {
+    margin: 0;
+    border: none;
+    background-color: inherit;
+  }
+`;
+
 const StyledComboboxList = styled(ComboboxList)`
   width: 100%;
   margin-top: 0.2rem;
   padding-left: 0;
   overflow: hidden;
   border-radius: 4px;
+  border: none;
   background-color: ${(props) => props.theme.colors.secondaryDark};
 `;
 
 const StyledComboboxOption = styled(ComboboxOption)`
-  display: block;
-  padding: 0.5em 0.7em;
-  overflow: hidden;
+  &[data-reach-combobox-option] {
+    display: block;
+    padding: 0.5em 0.7em;
+    overflow: hidden;
 
-  &:hover,
-  &[data-highlighted] {
-    background-color: ${(props) => props.theme.colors.secondary};
+    &:hover,
+    &[data-highlighted] {
+      background-color: ${(props) => props.theme.colors.secondary};
+    }
   }
 `;
 
@@ -54,13 +66,13 @@ const TheatreAreaSearch: React.FC = () => {
             onChange={(e) => setTerm((e.target as HTMLInputElement).value)}
             aria-labelledby="areaSearchLabel"
           />
-          <ComboboxPopover>
+          <StyledComboboxPopover>
             <StyledComboboxList aria-labelledby="areaSearchLabel">
               {matches.map((theatreArea) => (
                 <StyledComboboxOption value={theatreArea.name} key={theatreArea.id} />
               ))}
             </StyledComboboxList>
-          </ComboboxPopover>
+          </StyledComboboxPopover>
         </Combobox>
       </Section>
     );
